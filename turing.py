@@ -9,6 +9,33 @@ import functools
 import cookielib
 
 
+"""
+Machine de Turing : 
+    6 états internes : A, B, C, D, E, F. L'état initial est A, et F est le seul état final.
+    2 symboles, 0 et 1.
+    table de transitions : 
+
+Etat courant	Symbole courant	Symbole à écrire	Déplacer la tête vers	Prochain état
+A			0		1		DROITE			B
+A			1		1		GAUCHE			C
+B			0		1		DROITE			C
+B			1		1		DROITE			B
+C			0		1		DROITE			D
+C			1		0		GAUCHE			E
+D			0		1		GAUCHE			A
+D			1		1		GAUCHE			D
+E			0		1		DROITE			F
+E			1		0		GAUCHE			A
+
+
+Le ruban initial est donné dans la variable tape. La position initiale de la tête sera toujours sur le premier symbole de ce ruban.
+exemple : tape = "0 1 1 0 1"
+Gardez en tête que ce ruban est infini et qu'il est rempli de 0 partout ailleurs.
+Donc vous devrez juste renvoyer le ruban après la 1000e itération (si l'état final est atteint avant la 1000e itération, renvoyer alors l'état du ruban dans l'état final bien sur).
+
+"""
+
+
 def remplacer_valeur (bande, i, valeur) :
 	new_bande = bande[0:i]+valeur+bande[i+1:len(bande)]
 	return new_bande
