@@ -9,6 +9,39 @@ import functools
 import cookielib
 
 
+"""
+Dans cette épreuve, vous allez enfiler la robe d'un magicien des cartes. Vous allez devoir retrouver la séquence de cartes initiale, qui a donné lieu à une séquence de cartes finale proposée par votre auditoire.
+
+Déroulement du tour
+
+Vous proposez a votre auditoire de sélectionner un nombre N de cartes dans un jeu de 52 cartes. (Exemple N = 10)
+Vous lui demandez d’aligner ces N cartes devant vous, faces visibles.
+
+Vous lui demandez également d’inscrire sur une feuille une liste de N-2 chiffres, chaque chiffre pouvant prendre la valeur de 1 , 2 ou 3 .
+L’auditoire inscrit la liste de 8 chiffres suivante : 3-1-3-2-3-2-2-1
+
+Vous prenez un deuxième jeu de cartes, vous y récupérez les dix mêmes cartes que celles sélectionnées par votre auditoire. Puis vous rangez ces 10 cartes dans un ordre précis et dont vous seul (grand magicien que vous êtes) connaissez le secret de la méthode de tri.
+Vous formez donc avec ces cartes triées un tas que vous prenez dans votre main, faces cachées.
+
+Vous retournez la carte sur le dessus du tas et la posez sous la 1ere carte placée par votre auditoire : c'est la même !
+Vous observez le 1er chiffre écrit sur la feuille : il s’agit d’un 3. Vous effectuez donc 3 fois la manipulation suivante : vous prenez la carte sur le dessus de votre tas, et la passez sous votre tas, en la gardant face cachée.
+Vous retournez ensuite la carte sur le dessus de votre tas et la posez sous la 2eme carte placée par votre auditoire : c'est la même !
+
+Et ainsi de suite, vous obtenez ainsi la même séquence que celle de l’auditoire.
+
+
+Déroulement de l’épreuve
+
+Vous recevez le nombre de cartes sélectionnées par l’auditoire dans la variable nb_of_cards. Ce nombre peut varier de 20 à 52 cartes (jeu complet).
+Vous recevez également la séquence de cartes finale proposée par l’auditoire sous la forme d’une chaine de caractères, dans la variable final_sequence.
+
+Chaque nom de carte et représenté par la première lettre de sa couleur + un chiffre/mot pour sa valeur (attention noms anglais des couleurs et des valeurs).
+Exemple : C_7 représente le 7(valeur) de trèfle(couleur, en anglais Clubs)
+D_Jack représente le valet(valeur) de carreau(couleur, en anglais Diamonds)
+"""
+
+
+
 
 username = ""
 password = "*"
