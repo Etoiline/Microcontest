@@ -28,8 +28,6 @@ print (page)
 #####Exemple de données retournées dans page#####
 page = "Nombre_variables=3<br/>[nb_of_cards]<br/>Valeur=34<br/>[final_sequence]<br/>Longueur=169<br/>Valeur=S_10;H_Queen;C_5;D_Ace;S_6;S_Ace;S_5;H_8;S_Queen;D_9;C_9;D_4;H_Ace;H_2;D_King;H_9;S_4;H_King;C_Ace;D_5;C_King;C_2;C_4;D_10;H_10;C_Jack;S_8;D_3;C_3;C_6;D_Jack;S_9;S_3;H_4<br/>[cards_passed]<br/>Longueur=63<br/>Valeur=3;3;3;1;2;3;2;2;1;1;3;3;2;2;3;2;1;1;3;1;3;3;3;3;2;1;3;3;3;2;1;1<br/>"
 
-
-page = "Nombre_variables=3<br/>[nb_of_cards]<br/>Valeur=34<br/>[final_sequence]<br/>Longueur=169<br/>Valeur=C_7;S_Ace;D_10;H_2;C_5;H_8;D_Jack;C_4;C_6;S_7<br/>[cards_passed]<br/>Longueur=63<br/>Valeur=3;1;3;2;3;2;2;1<br/>"
 """
 
 #####Extraction de la suite de cartes et des nombres#####
