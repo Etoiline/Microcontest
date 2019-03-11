@@ -8,6 +8,20 @@ import re
 import functools
 import cookielib
 
+"""
+Algorithme RLE (Run-length encoding).
+
+Son principe est le suivant:
+
+Soit la chaîne à compresser : donnees = "AAAGGBBBOPPTTTTTZZZZ"
+Le principe est de compter le nombre d'occurrences consécutives de chaque caractères. Dans cet exemple, il y a 3 A d'affilée, on code donc AAA par 3A, puis GG par 2G, etc.
+Une fois compressée : donnees_compressees = "3A2G3B1O2P5T4Z"
+
+L'épreuve se compose de deux étapes, une pour la compression, et une pour la décompression.
+Vous devez récupérer la chaîne à compresser dans donnees_a_compresser et celle à décompresser dans donnees_a_decompresser.
+Vous devez renvoyer le résultat de la compression dans resulat_compression et celui de la décompression dans resultat_decompression.
+"""
+
 #####Ne pas oublier de remplir#####
 username = ""
 password = ""
