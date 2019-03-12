@@ -8,6 +8,17 @@ import re
 import functools
 import cookielib
 
+"""
+Vous allez recevoir un nom d'utilisateur dans username.
+Votre rôle est de visiter la page http://www.wechall.net/en/profile/‹username› et de récupérer les informations suivantes :
+    son score : vous devez le retourner dans la variable score
+    son rang général : vous devez le retourner dans la variable rank
+    sa date d'enregistrement : vous devez la retourner dans la variable register_date
+    la date de sa dernière activité : vous devez la retourner dans la variable last_activity
+"""
+
+
+
 username = ""
 password = ""
 cont_id = 44
