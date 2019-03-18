@@ -7,10 +7,32 @@ from urllib2 import *
 import re
 import functools
 import cookielib
-from PIL import Image
-import pytesseract
-import cv2
 import nltk
+
+
+
+"""
+Dans ce challenge, le but est de détecter automatiquement la langue de 4 textes.
+Ces textes peuvent être écrits dans 10 différentes langues. Voici la liste des langues possibles, ainsi que leur code associé :
+
+Langage		Code associé
+Français	fr
+Anglais		en
+Italien		it
+Allemand	de
+Suédois		sw
+Espagnol	es
+Portugais	po
+Finlandais	fi
+Hollandais	du
+Danois		da
+
+Vous devez renvoyer la langue de chacun des textes (contenus dans les variables txt1, txt2, txt3 and txt4) 
+dans les variables lang1, lang2, lang3, and lang4. Remplissez ces variables avec les codes associés à chaque langue.
+
+"""
+
+
 
 #####Fonction pour extraire les variables#####
 variables={}
@@ -58,6 +80,10 @@ def _parse(page):
 		raise ParseError("Couldn't parse variables: %r" % page[pos:pos+50], exc), None, tb
 
 
+#####Fonciotns qui déterminent la langue du texte#####
+#J'utilise la biliothèque nltk 
+#Il s'agit de comparer les mots du texte avec une liste de mots de chaque langue
+#et de déterminer de quelle langue il se rapproche le plus
 def calc_ratios(text) :
 	ratios={}
 	tokens = nltk.wordpunct_tokenize(text)
@@ -79,6 +105,8 @@ def detect_language(text) :
 	return most_rated_language
 
 
+
+#dictionnaire associant la langue à son code
 langage = {'french':'fr', 'english':'en', 'italian':'it', 'german':'de', 'swedish':'sw', 'spanish':'es', 'portuguese':'po', 'finnish':'fi', 'dutch':'du', 'danish':'da'}
 
 username = ""
@@ -86,7 +114,6 @@ password = "*"
 cont_id = 37
 url = "http://www.microcontest.com/contests/"+str(cont_id)+"/contest.php"
 url_result = "http://www.microcontest.com/contests/"+str(cont_id)+"/validation.php"
-
 data = [("username", username), ("password", sha1(password).hexdigest()),("ID", cont_id), ("contestlogin", 1), ("version", 2)]
 
 
@@ -94,16 +121,14 @@ opener = build_opener(HTTPCookieProcessor())
 page = opener.open(url, urlencode(data)).read()
 _parse(page)
 
+#détection des langues
 lang1 = detect_language(variables['txt1'])
 lang2 = detect_language(variables['txt2'])
 lang3 = detect_language(variables['txt3'])
 lang4 = detect_language(variables['txt4'])
 
 
-
-
-
-
+#mise en forme et envoi des résultats
 data_result = {"lang1":langage[lang1], 'lang2':langage[lang2], 'lang3':langage[lang3], 'lang4':langage[lang4]}
 page_result = opener.open(url_result, urlencode(data_result)).read()
 print page_result
