@@ -103,5 +103,5 @@ tas_cartes_magie = ";".join(tas_cartes_magie)
 #####On renvoie la réponse#####
 data_result = {"initial_sequence":tas_cartes_magie}
 page_result = opener.open(url_result, urlencode(data_result)).read()
-print page_result
+print (page_result)
 
