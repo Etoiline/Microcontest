@@ -93,5 +93,5 @@ tape = " ".join(list(bande))
 
 data_result = {"final_tape_state":tape}
 page_result = opener.open(url_result, urlencode(data_result)).read()
-print page_result
+print (page_result)
 
