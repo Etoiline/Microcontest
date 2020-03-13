@@ -131,5 +131,5 @@ lang4 = detect_language(variables['txt4'])
 #mise en forme et envoi des résultats
 data_result = {"lang1":langage[lang1], 'lang2':langage[lang2], 'lang3':langage[lang3], 'lang4':langage[lang4]}
 page_result = opener.open(url_result, urlencode(data_result)).read()
-print page_result
+print (page_result)
 
