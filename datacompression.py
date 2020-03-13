@@ -34,7 +34,7 @@ data = [("username", username), ("password", sha1(password).hexdigest()),("ID", 
 
 opener = build_opener(HTTPCookieProcessor())
 page = opener.open(url, urlencode(data)).read()
-print page
+print (page)
 
 #####Exemple de données envoyées par le serveur#####
 #Nombre_variables=2<br/>[donnees_a_compresser]<br/>Longueur=108<br/>Valeur=PPPPPPRRRRRRHHHHHHHHYYYYYYYYYYYYYYAAAAAAAAKYYYYYEEEEYYYYYYYIIIIIIIIHHHHHHHHRRRRRRRRRRTTTTTTTTTTTTTTTTQZZZZRS<br/>[donnees_a_decompresser]<br/>Longueur=60<br/>Valeur=2P6E2P4D4S2A3P10V1E5M4J9C6O7W9X4B3Q4O4A8A4R9L1U5O10X4S7J9R9F<br/>
@@ -79,6 +79,6 @@ for l in donnees_a_decompresser :
 
 data_result = {"resultat_compression":resultat_compression, "resultat_decompression":resultat_decompression}
 page_result = opener.open(url_result, urlencode(data_result)).read()
-print page_result
+print (page_result)
 
 
