@@ -30,7 +30,7 @@ data = [("username", username), ("password", sha1(password).hexdigest()),("ID", 
 
 opener = build_opener(HTTPCookieProcessor())
 page = opener.open(url, urlencode(data)).read()
-print page
+print (page)
 
 """
 #####Exemple de données retournées dans page#####
@@ -54,6 +54,6 @@ last_activity = re.compile(r"<th>Last Activity</th><td>(.+)</td>").search(page1)
 #####Envoi des résultats#####
 data_result = {"score":score, "rank":rank, "register_date":register_date, "last_activity":last_activity}
 page_result = opener.open(url_result, urlencode(data_result)).read()
-print page_result
+print (page_result)
 
 
